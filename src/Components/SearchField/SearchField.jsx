@@ -35,17 +35,8 @@ const SearchField = () => {
   const handleChange = debounce((event) => {
     setName(event.target.value);
     console.log(event.target.value);
-  }, 500);
+  }, 2000);
 
-  async function getUserRepoCount(url) {
-    const count = await getUserRepo(url).then((response) => {
-      if (response) {
-        console.log(response.data);
-        return response;
-      }
-    });
-    return count;
-  }
   return (
     <div className={styles.SearchField}>
       <form className={classes.root} noValidate autoComplete="off">
