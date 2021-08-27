@@ -1,0 +1,23 @@
+.UserCard {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  background: #fff;
+  margin-bottom: 5px;
+  align-items: flex-end;
+}
+.avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  img {
+    width: 100%;
+  }
+}
+.userName {
+  margin-left: 20px;
+  font-size: 20px;
+  color: rgb(116, 116, 116);
+  flex: 1 1 auto;
+}
