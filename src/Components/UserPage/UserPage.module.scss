@@ -1,0 +1,82 @@
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+.header {
+  // border: 1px solid rgb(0, 0, 0);
+  display: flex;
+  padding: 20px;
+}
+.avatar {
+  width: 200px;
+  height: 200px;
+  border: 1px solid rgb(179, 179, 179);
+  overflow: hidden;
+  border-radius: 10px;
+
+  img {
+    width: 100%;
+  }
+}
+.userData {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+.dataItem {
+  display: flex;
+  margin-bottom: 10px;
+}
+.name {
+  flex: 1 1 30%;
+}
+.value {
+  flex: 1 1 70%;
+  border-bottom: 1px solid rgb(146, 146, 146);
+}
+.searchField {
+  margin: 20px 0;
+}
+.repoField {
+  padding: 10px;
+}
+.repoItem {
+  height: 70px;
+  width: 100%;
+  background: #fff;
+  margin-bottom: 10px;
+  padding: 10px 30px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  transition: all 0.2s ease 0s;
+  cursor: pointer;
+  color: rgb(85, 85, 85);
+  &:hover {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  }
+}
+.repoTitle {
+  font-size: 20px;
+  font-weight: bold;
+  flex: 1 1 auto;
+}
+.repoInfo {
+  display: flex;
+  flex-direction: column;
+  background: rgb(230, 230, 230);
+  padding: 5px 20px;
+  border-radius: 5px;
+  p {
+    margin-bottom: 3px;
+  }
+}
+.noResults {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 30px;
+  text-transform: uppercase;
+  color: rgb(122, 122, 122);
+}

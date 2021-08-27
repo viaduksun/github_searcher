@@ -1,4 +1,31 @@
 .SearchField {
-  // border: 1px solid #000;
   margin-top: 40px;
+}
+.header {
+  padding: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: rgb(85, 85, 85);
+  span {
+    font-weight: bold;
+  }
+}
+.searchForm {
+  display: flex;
+  align-items: center;
+}
+.searchInputWrapper {
+  flex: 1 1 auto;
+}
+.searchInput {
+  flex: 1 1 auto;
+  form {
+    width: 100%;
+  }
+}
+.refresh {
+  font-size: 35px;
+}
+.content {
+  padding: 10px;
 }

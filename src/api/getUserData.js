@@ -1,14 +1,14 @@
 import axios from 'axios';
 
-const getUserRepo = (url) => {
+const getUserData = (url) => {
   const userName = "";
   const password = "";
   const headers = {
     'Content-Type': 'application/json',
-    Authorization: `Basic ${btoa(`${userName}:${password}`)}`
+    Authorization: `Basic ${btoa(`${userName}:${password}`)}`,
   };
   return axios
     .get(url)
 
 };
-export default getUserRepo;
+export default getUserData;
