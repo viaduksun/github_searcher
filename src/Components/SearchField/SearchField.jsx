@@ -47,6 +47,9 @@ const CssTextField = withStyles({
         borderColor: "#2d5173",
       },
     },
+    "& .MuiOutlinedInput-input": {
+      zIndex: 10,
+    },
   },
 })(TextField);
 
