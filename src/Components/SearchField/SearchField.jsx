@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./SearchField.module.scss";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import IconButton from "@material-ui/core/IconButton";
 import RefreshIcon from "@material-ui/icons/Refresh";
@@ -19,6 +19,36 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
+
+const CssTextField = withStyles({
+  root: {
+    "& label": {
+      color: "#799aba",
+    },
+    "& label.Mui-focused": {
+      color: "#265f99",
+    },
+    "& .MuiInput-underline:after": {
+      borderBottomColor: "green",
+    },
+    "& .MuiOutlinedInput-root": {
+      "& fieldset": {
+        backgroundColor: "#d8e1e3",
+        borderColor: "#5d7185",
+        border: "2px solid",
+      },
+      "&:hover fieldset": {
+        borderColor: "#445463",
+      },
+      "&:placeholder fieldset": {
+        color: "#5a7ea3",
+      },
+      "&.Mui-focused fieldset": {
+        borderColor: "#2d5173",
+      },
+    },
+  },
+})(TextField);
 
 const SearchField = () => {
   const dispatch = useDispatch();
@@ -60,7 +90,9 @@ const SearchField = () => {
   const handleRefresh = () => {
     console.log("handleRefresh");
     localStorage.removeItem("users");
+    localStorage.removeItem("total");
     setUsers([]);
+    setTotalCount([]);
     dispatch(setUsersAction([]));
   };
 
@@ -69,7 +101,7 @@ const SearchField = () => {
       <div className={styles.searchForm}>
         <div className={styles.searchInputWrapper}>
           <form className={classes.root} noValidate autoComplete="off">
-            <TextField
+            <CssTextField
               id="outlined-basic"
               label="Search for Users"
               variant="outlined"
