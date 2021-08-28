@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
-import { makeStyles } from "@material-ui/core/styles";
-import DeleteIcon from "@material-ui/icons/Delete";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import getUserData from "../../api/getUserData";
 import styles from "./UserPage.module.scss";
@@ -15,6 +14,17 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
   },
 }));
+
+const BackButton = withStyles((theme) => ({
+  root: {
+    color: "#fff",
+    textTransform: "none",
+    backgroundColor: "#8595a6",
+    "&:hover": {
+      backgroundColor: "#6a798a",
+    },
+  },
+}))(Button);
 
 const UserPage = () => {
   const classes = useStyles();
@@ -54,14 +64,14 @@ const UserPage = () => {
       <div className="container">
         <div className={styles.actions}>
           <Link to="/">
-            <Button
+            <BackButton
               variant="contained"
               color="primary"
               className={classes.button}
               startIcon={<ArrowBackIcon />}
             >
               Back to search page
-            </Button>
+            </BackButton>
           </Link>
         </div>
         <div className={styles.header}>

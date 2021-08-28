@@ -3,7 +3,7 @@ import styles from "./UserPage.module.scss";
 import UserRepoItem from "./UserRepoItem";
 import { useSelector } from "react-redux";
 import { debounce } from "lodash";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 
 const useStyles = makeStyles((theme) => ({
@@ -14,6 +14,36 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
+
+const CssTextField = withStyles({
+  root: {
+    "& label": {
+      color: "#799aba",
+    },
+    "& label.Mui-focused": {
+      color: "#265f99",
+    },
+    "& .MuiInput-underline:after": {
+      borderBottomColor: "green",
+    },
+    "& .MuiOutlinedInput-root": {
+      "& fieldset": {
+        backgroundColor: "#d8e1e3",
+        borderColor: "#5d7185",
+        border: "2px solid",
+      },
+      "&:hover fieldset": {
+        borderColor: "#445463",
+      },
+      "&:placeholder fieldset": {
+        color: "#5a7ea3",
+      },
+      "&.Mui-focused fieldset": {
+        borderColor: "#2d5173",
+      },
+    },
+  },
+})(TextField);
 
 const UserRepos = ({ userRepo }) => {
   // console.log(userRepo);
@@ -49,7 +79,7 @@ const UserRepos = ({ userRepo }) => {
     <div>
       <div className={styles.searchField}>
         <form className={classes.root} noValidate autoComplete="off">
-          <TextField
+          <CssTextField
             id="outlined-basic"
             label="Search for repositories"
             variant="outlined"
